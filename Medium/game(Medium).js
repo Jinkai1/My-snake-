@@ -10,7 +10,6 @@ let speed = 5
 
 
 function main(currentTime) {
-    console.log(choice)
     if (gameOver) {
         if (confirm(
             'Your snake length was ' + score +
