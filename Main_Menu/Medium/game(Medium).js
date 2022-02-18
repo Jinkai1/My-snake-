@@ -8,13 +8,15 @@ const gameBoard = document.getElementById('game-board')
 let add = 10
 let speed = 5
 
-
+let username1= "";
 function main(currentTime) {
     if (gameOver) {
         if (confirm(
+            
             'Your snake length was ' + score +
-            ' You lost. Press ok to restart. Press cancel to go to main menu.')) {
-            window.location = './Medium.html'
+            ' You lost. Press ok to go to main menu.')) {
+           username1 =  prompt("username :", "username")
+           insertScore()
         }
         else {
             window.location = '../Menu2.html'
@@ -59,4 +61,27 @@ function checkDeath() {
 
 function updateScore() {
     console.log(score)
+}
+
+function insertScore(){
+    var jsondata = {"username": username1,"score": score};
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://snakegame-a973.restdb.io/rest/username",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json",
+    "x-apikey": "620fab4534fd6215658587dd",
+    "cache-control": "no-cache"
+  },
+  "processData": false,
+  "data": JSON.stringify(jsondata)
+}
+
+$.ajax(settings).done(function (response) {
+  
+  console.log(response);
+  window.location.href="../Menu2.html";
+});
 }
