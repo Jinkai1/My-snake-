@@ -6,7 +6,6 @@ let food = getRandomFoodPosition()
 const eat = 1
 const eats = 5
 export let score = 1
-
 export function update() {
     if (onSnake(food)) {
         expandSnake(eat)
