@@ -52,3 +52,60 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 }); 
+
+// $(document).ready(function() {
+//     const APIKEY = "620f447934fd621565858784";
+//     getUsername();
+
+//     $(".form__button").on("click", function(e) {
+//         e.preventDefault();
+
+//         let userName = $(".form__input").val();
+
+//         let jsondata = {
+//             "Username": userName
+//         };
+
+//         let settings = {
+//             "async": true,
+//             "crossDomain": true,
+//             "url": "https://assignment2-816c.restdb.io/rest/test",
+//             "method": "POST",
+//             "headers": {
+//                 "content-type": "application/json",
+//                 "x-apikey": APIKEY,
+//                 "cache-control": "no-cache"
+//             },
+//             "processData": false,
+//             "data": JSON.stringify(jsondata),
+//         };
+
+//         $.ajax(settings).done(function (response) {
+//             console.log(response);
+
+//             $(".form__button").prop("disabled", false);
+//         });
+//     });
+
+//     function getUsername(limit = 10, all = true) {
+//         let settings = {
+//             "async": true,
+//             "crossDomain": true,
+//             "url": "https://assignment2-816c.restdb.io/rest/test",
+//             "method": "GET",
+//             "headers": {
+//                 "content-type": "application/json",
+//                 "x-apikey": APIKEY,
+//                 "cache-control": "no-cache"
+//             },
+//         }
+
+//         $.ajax(settings).done(function (response) {
+//             let content = "";
+
+//             for (var i = 0; i < response.length && i < limit; i++) {
+//                 content += "<tr><td>" + response[i].userName + "</td></tr>";
+//             }
+//         })
+//     }
+// })
