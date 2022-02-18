@@ -17,7 +17,7 @@ function main(currentTime) {
             window.location = './Medium.html'
         }
         else {
-            window.location = './Menu.html'
+            window.location = '../Menu2.html'
         }
         return
     }
